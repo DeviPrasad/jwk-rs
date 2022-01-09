@@ -25,11 +25,12 @@ zeroize       = { version = "1.4", features = ["zeroize_derive"] }
 
 [features]
 pkcs-convert = ["num-bigint", "yasna"]
-jwt-convert  = ["pkcs-convert", "jsonwebtoken"]
+#jwt-convert  = ["pkcs-convert", "jsonwebtoken"]
+jwt-convert  = ["pkcs-convert"]
 generate     = ["p256", "rand"]
 
 [dev-dependencies]
-jsonwebtoken = "7.2"
+#jsonwebtoken = "7.2"
 
 [package.metadata.docs.rs]
 all-features = true

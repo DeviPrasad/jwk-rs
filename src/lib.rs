@@ -161,6 +161,7 @@ impl JsonWebKey {
                 },
             )
             | (RS256, RSA { .. })
+            | (PS256, RSA { .. })
             | (HS256, Symmetric { .. }) => Ok(()),
             _ => Err(Error::MismatchedAlgorithm),
         }
@@ -537,6 +538,7 @@ pub enum Algorithm {
     HS256,
     RS256,
     ES256,
+    PS256,
 }
 
 #[cfg(feature = "jwt-convert")]
@@ -549,6 +551,7 @@ const _IMPL_JWT_CONVERSIONS: () = {
                 Algorithm::HS256 => Self::HS256,
                 Algorithm::ES256 => Self::ES256,
                 Algorithm::RS256 => Self::RS256,
+                Algorithm::PS256 => Self::PS256,
             }
         }
     }
